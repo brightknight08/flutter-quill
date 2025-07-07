@@ -165,8 +165,8 @@ class InlineCodeStyle {
   }
 
   @override
-  int get hashCode => Object.hash(style, header1, header2, header3, header4,
-      header5, header6, backgroundColor, radius);
+  int get hashCode => Object.hash(
+      style, header1, header2, header3, header4, header5, header6, backgroundColor, radius);
 }
 
 @immutable
@@ -179,8 +179,7 @@ class DefaultListBlockStyle extends DefaultTextBlockStyle {
     super.decoration,
     this.checkboxUIBuilder, {
     this.indentWidthBuilder = TextBlockUtils.defaultIndentWidthBuilder,
-    this.numberPointWidthBuilder =
-        TextBlockUtils.defaultNumberPointWidthBuilder,
+    this.numberPointWidthBuilder = TextBlockUtils.defaultNumberPointWidthBuilder,
   });
 
   final QuillCheckboxBuilder? checkboxUIBuilder;
@@ -206,8 +205,7 @@ class DefaultListBlockStyle extends DefaultTextBlockStyle {
       decoration ?? this.decoration,
       checkboxUIBuilder ?? this.checkboxUIBuilder,
       indentWidthBuilder: indentWidthBuilder ?? this.indentWidthBuilder,
-      numberPointWidthBuilder:
-      numberPointWidthBuilder ?? this.numberPointWidthBuilder,
+      numberPointWidthBuilder: numberPointWidthBuilder ?? this.numberPointWidthBuilder,
     );
   }
 }
@@ -300,7 +298,7 @@ class DefaultStyles {
 
     final inlineCodeStyle = TextStyle(
       fontSize: 14,
-      color: themeData.colorScheme.primary.withValues(alpha: 0.8),
+      color: themeData.colorScheme.primary.withOpacity(0.8),
       fontFamily: fontFamily,
     );
 
@@ -464,7 +462,7 @@ class DefaultStyles {
           defaultTextStyle.style.copyWith(
             fontSize: 20,
             height: 1.5,
-            color: Colors.grey.withValues(alpha: 0.6),
+            color: Colors.grey.withOpacity(0.6),
           ),
           baseHorizontalSpacing,
           VerticalSpacing.zero,
@@ -479,7 +477,7 @@ class DefaultStyles {
         null,
       ),
       quote: DefaultTextBlockStyle(
-        TextStyle(color: baseStyle.color!.withValues(alpha: 0.6)),
+        TextStyle(color: baseStyle.color!.withOpacity(0.6)),
         baseHorizontalSpacing,
         baseVerticalSpacing,
         const VerticalSpacing(6, 2),
@@ -491,7 +489,7 @@ class DefaultStyles {
       ),
       code: DefaultTextBlockStyle(
           TextStyle(
-            color: Colors.blue.shade900.withValues(alpha: 0.9),
+            color: Colors.blue.shade900.withOpacity(0.9),
             fontFamily: fontFamily,
             fontSize: 13,
             height: 1.15,

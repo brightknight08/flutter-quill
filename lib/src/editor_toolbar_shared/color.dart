@@ -19,16 +19,9 @@ Color hexToColor(String? hexString) {
 
 // Without the hash sign (`#`).
 String colorToHex(Color color) {
-  int floatToInt8(double x) => (x * 255.0).round() & 0xff;
-
-  final alpha = floatToInt8(color.a);
-  final red = floatToInt8(color.r);
-  final green = floatToInt8(color.g);
-  final blue = floatToInt8(color.b);
-
-  return '${alpha.toRadixString(16).padLeft(2, '0')}'
-          '${red.toRadixString(16).padLeft(2, '0')}'
-          '${green.toRadixString(16).padLeft(2, '0')}'
-          '${blue.toRadixString(16).padLeft(2, '0')}'
+  return '${color.alpha.toRadixString(16).padLeft(2, '0')}'
+          '${color.red.toRadixString(16).padLeft(2, '0')}'
+          '${color.green.toRadixString(16).padLeft(2, '0')}'
+          '${color.blue.toRadixString(16).padLeft(2, '0')}'
       .toUpperCase();
 }

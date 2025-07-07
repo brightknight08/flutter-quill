@@ -153,8 +153,7 @@ class QuillTextLink {
   }
 }
 
-Future<LinkMenuAction> _showCupertinoLinkMenu(
-    BuildContext context, String link) async {
+Future<LinkMenuAction> _showCupertinoLinkMenu(BuildContext context, String link) async {
   final result = await showCupertinoModalPopup<LinkMenuAction>(
     // Set useRootNavigator to false to fix https://github.com/singerdmx/flutter-quill/issues/1170
     useRootNavigator: false,
@@ -215,7 +214,7 @@ class _CupertinoAction extends StatelessWidget {
             Icon(
               icon,
               size: theme.iconTheme.size,
-              color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
+              color: theme.colorScheme.onSurface.withOpacity(0.75),
             )
           ],
         ),
@@ -224,8 +223,7 @@ class _CupertinoAction extends StatelessWidget {
   }
 }
 
-Future<LinkMenuAction> _showMaterialMenu(
-    BuildContext context, String link) async {
+Future<LinkMenuAction> _showMaterialMenu(BuildContext context, String link) async {
   final result = await showModalBottomSheet<LinkMenuAction>(
     context: context,
     builder: (ctx) {
@@ -273,7 +271,7 @@ class _MaterialAction extends StatelessWidget {
       leading: Icon(
         icon,
         size: theme.iconTheme.size,
-        color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
+        color: theme.colorScheme.onSurface.withOpacity(0.75),
       ),
       title: Text(title),
       onTap: onPressed,
